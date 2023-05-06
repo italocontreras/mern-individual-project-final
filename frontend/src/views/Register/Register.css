@@ -1,0 +1,73 @@
+.register{
+    position: absolute;
+    height: 500px;
+    width: 900px;
+}
+
+.register-nav-bar{
+    /* font-weight: bold; */
+    height: 60px;
+    width: 900px;
+    display: flex;
+    justify-content:flex-start;
+    /* align-items: flex-start; */
+    font-size: 20px;
+    background-color: rgb(20, 59, 118);
+    color: white;
+}
+
+.register-word{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.register-body{
+    height: 440px;
+    width: 900px;
+    /* background-image: url("./school.jpg"); */
+    background-image: url("./university2.jpg");
+    background-size: cover;
+}
+
+.register-input-out{
+    position: absolute;
+    top:70px;
+    left: 270px; 
+    height: 420px;
+    width: 350px;
+    background-color: white;
+    padding: 10px;
+    /* outline: 2px solid black; */
+    background-color: rgba(255, 255, 255, 0.537);
+  
+}
+
+.register-button-out{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-group label{
+    /* margin-bottom: 15px; */
+    font-size: 15px;
+}
+
+
+.form-control{
+    outline: 2px solid black;
+    border-radius: 1px;
+    height: 30px;
+}
+
+.register-button{
+    padding-left: 20px;
+    padding-right: 20px;
+
+    color: white;
+    background-color:rgb(20, 20, 155);
+    box-shadow: 3px 3px black;
+
+}

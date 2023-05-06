@@ -1,0 +1,74 @@
+.login-container{
+    position: absolute;
+    height: 500px;
+    width: 900px;
+}
+
+.login-nav-bar{
+    /* font-weight: bold; */
+    height: 60px;
+    width: 900px;
+    display: flex;
+    justify-content:flex-start;
+    /* align-items: flex-start; */
+    font-size: 20px;
+    background-color: rgb(20, 59, 118);
+    color: white;
+}
+
+.login-word{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.login-body{
+    height: 440px;
+    width: 900px;
+    /* background-image: url("./school.jpg"); */
+    background-image: url("./university2.jpg");
+    background-size: cover;
+}
+
+.login-input-out{
+    position: absolute;
+    top:120px;
+    right: 270px; 
+    height: 250px;
+    width: 350px;
+    /* background-color: white; */
+    /* background-color: transparent; */
+
+    /* background-color: rgba(206, 218, 221, 0.885); */
+    background-color: rgba(255, 255, 255, 0.537);
+    
+    /* opacity: 0.5; */
+    padding: 15px;
+    /* outline: 2px solid black; */
+}
+
+
+.login-button-out{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-button{
+    padding-left: 20px;
+    padding-right: 20px;
+
+    color: white;
+    background-color: rgb(20, 20, 155);
+    box-shadow: 3px 3px black;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+.form-control{
+    outline: 2px solid black;
+    border-radius: 1px;
+}

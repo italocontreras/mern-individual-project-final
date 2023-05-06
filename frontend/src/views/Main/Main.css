@@ -1,0 +1,125 @@
+
+/* .main{
+    position: absolute;
+    height: 500px;
+    width: 900px;
+} */
+
+.main{
+  /* position: relative; */
+  height: 100vh;
+  /* width: 100%; */
+}
+
+
+.nav-bar{
+  /* position: absolute; */
+  height: 10%;
+  background-color: rgb(20, 59, 118);
+  /* background-color: #007bff; */
+  color: white;
+
+
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: space-between; */
+}
+
+
+.left-nav-bar{
+  /* height: 10%; */
+  /* display: flex; */
+  /* justify-content:flex-start; */
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  /* margin-right: 35px; */
+  left: 2%;
+  padding-top: 10px;
+}
+
+.right-nav-bar{
+  padding-top: 10px;
+  font-size: 25px;
+  position: absolute;
+  right:0%
+}
+
+.word{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 35px;
+}
+
+
+.body{
+  /* position: absolute; */
+  height: 90%;
+  /* background-color: red; */
+  background-image: url("./university2.jpg");
+  background-size: cover;
+
+  /* background-position:bottom 50px; */
+
+  /* background-position:center; */
+  background-position: 0px -80px;
+}
+
+
+ .title{
+  position: absolute;
+  font-weight: bold;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /* left: 82px; */
+  /* top: 170px; */
+  top:25%;
+  left:10%;
+  font-size: 45px;
+
+}
+
+
+.btns{
+
+  /* height: 50px; */
+  /* width: 200px; */
+  /* display: flex; */
+  /* justify-content:space-between; */
+  
+}
+
+.btns{
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  
+}
+
+
+.container-btn-info{
+  
+  margin-bottom: 50px;
+  /* width: 300px; */
+
+  /* font-size: 20px; */
+}
+
+.btn-info{
+  /* font-size: 20px; */
+  font-size: 20px;
+  width: 300px;
+}
+
+.container-btn-primary{
+  display: flex;
+  justify-content: center;
+} 
+
+.btn-primary {
+  background-color: rgb(20, 59, 118);
+  border-color: rgb(20, 59, 118);
+  width: 200px;
+}
