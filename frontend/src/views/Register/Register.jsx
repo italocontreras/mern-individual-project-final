@@ -35,69 +35,91 @@ function Register() {
         }
     
         
-      }
+    }
     
 
-    return (
-        <div className='register'>
-            <div className='register-nav-bar'>
+    async function goHome(ev) {
+        ev.preventDefault();
+    
 
-                <div className='register-word'>
-                    Home
-                </div>    
-                <div className='register-word'>
-                    Nosotros
-                </div>    
-                <div className='register-word'>
-                    Cursos
+        try {
+            // alert('!')
+            navigate('/')
+
+        }
+        catch(err) {
+
+        }
+    }
+
+    return (
+        <div className='register-container'>
+            
+            <div className='register-nav-bar'>
+                <div className='register-left-nav-bar'>
+                    <div className='register-word'>
+                        <span onClick ={goHome}>Inicio</span>
+                        
+                    </div>    
+                    <div className='register-word'>
+                        Nosotros
+                    </div>    
+                    <div className='register-word'>
+                        Contáctanos
+                    </div>
+
                 </div>
-                <div className='register-word'>
-                    Profesores
-                </div>
-                <div className='register-word'>
-                    Contactanos
+
+                <div className='register-right-nav-bar'>
+                    <div className='register-word'>
+                        ¡Quiero enseñar!
+                    </div>
                 </div>
 
             </div>
+
+
             <div className='register-body'>
 
-                <div className='register-input-out'>
+                <div className='out-register-input'>
                     <form className='register-input' onSubmit={register}>
                     
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlInput1">First Name</label>
+                            <label htmlFor="exampleFormControlInput1">Nombre</label>
                             <input className="form-control" id="exampleFormControlInput1" required onChange={ev => setName(ev.target.value)}/>
                         </div>
-            
+
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlInput1">Last Name</label>
+                            <label htmlFor="exampleFormControlInput1">Apellido</label>
                             <input className="form-control" id="exampleFormControlInput2" required onChange={ev => setlastName(ev.target.value)}/>
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlInput1">Email</label>
+                            <label htmlFor="exampleFormControlInput1">Correo</label>
                             <input type="email" className="form-control" id="exampleFormControlInput3" required onChange={ev => setEmail(ev.target.value)}/>
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlInput1">Password</label>
+                            <label htmlFor="exampleFormControlInput1">Contraseña</label>
                             <input type="password" className="form-control" id="exampleFormControlInput4" required onChange={ev => setPassword(ev.target.value)}/>
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlInput1">Confirm Password</label>
+                            <label htmlFor="exampleFormControlInput1">Confirmar Contraseña</label>
                             <input type="password" className="form-control" id="exampleFormControlInput5" required onChange={ev => setpass_confirm(ev.target.value)}/>
                         </div>
 
 
                         <div className='register-button-out'>
-                            <button type="submit" className='register-button'>Register</button>
+                            <button type="submit" className='register-button'>Registrarse</button>
                         </div>
                     </form>
 
                 </div>
 
             </div>
+
+
         </div> 
     );
   }

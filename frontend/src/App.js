@@ -24,7 +24,7 @@ function App() {
             {/* <Route default path='/' element={<Main />}></Route> */}
             <Route path='/' element={<Main />}></Route>
             <Route path='/login' element={<Login />}></Route>
-            {/* <Route path='/register' element={<Register />}></Route> */}
+            <Route path='/register' element={<Register />}></Route>
             
             {/* <Route path='/teachers' element={<ListTeachers />}></Route> */}
           </Routes>

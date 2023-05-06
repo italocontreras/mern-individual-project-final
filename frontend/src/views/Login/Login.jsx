@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 import { useState } from "react";
 
+import { Link } from 'react-router-dom';
+
+
 function Login() {
 
     const navigate = useNavigate() 
@@ -34,55 +37,84 @@ function Login() {
         
     }
 
+    async function goHome(ev) {
+        ev.preventDefault();
+    
+
+        try {
+            // alert('!')
+            navigate('/')
+
+        }
+        catch(err) {
+
+        }
+    }
+
     return (
         <div className='login-container'>
+
             <div className='login-nav-bar'>
+                <div className='login-left-nav-bar'>
+                    <div className='login-word'>
+                        <span onClick ={goHome}>Inicio</span>
+                        
+                    </div>    
+                    <div className='login-word'>
+                        Nosotros
+                    </div>    
+                    <div className='login-word'>
+                        Contáctanos
+                    </div>
 
-      
-                <div className='login-word'>
-                    Home
-                </div>    
-                <div className='login-word'>
-                    Nosotros
-                </div>    
-                <div className='login-word'>
-                    Cursos
-                </div>
-                <div className='login-word'>
-                    Profesores
-                </div>
-                <div className='login-word'>
-                    Contactanos
                 </div>
 
+                <div className='login-right-nav-bar'>
+                    <div className='login-word'>
+                        ¡Quiero enseñar!
+                    </div>
+                </div>
 
             </div>
+
+
             <div className='login-body'>
 
-                <div className='login-input-out'>
-                    <form className='login-input' onSubmit={login}>
+                <div className='out-form-login'>
+
+                    <form className='form-login' onSubmit={login}>
 
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlInput1">Email</label>
+                            <label htmlFor="exampleFormControlInput1">Correo</label>
                             <input required type="email" className="form-control" id="email" onChange={ev => setEmail(ev.target.value)}/>
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlInput1">Password</label>
+                            <label htmlFor="exampleFormControlInput1">Contraseña</label>
                             <input required type="password" className="form-control" id="password" onChange={ev => setPassword(ev.target.value)}/>
                         </div>
 
-                        <div className='login-button-out'>
-                            <button type="submit" className='login-button'>Login</button>
+                        <div className='out-login-button'>
+                            <button type="submit" className='login-button'>Ingresar</button>
                         </div>
+
                     </form>            
 
+                    <div className='mensaje'>
+                        ¿Aún no tienes cuenta?
+                    </div>
+
+                    <div className='link'>
+                        
+                        <Link to="/register">Registrarse</Link>
+                        
+                        
+                    </div>
 
                 </div>
 
-
-
             </div>
+
         </div> 
     );
   }

@@ -58,14 +58,14 @@ function Main() {
             <div className='nav-bar'>
                 <div className='left-nav-bar'>
                     <div className='word'>
-                        <span onClick ={goHome}>Home</span>
+                        <span onClick ={goHome}>Inicio</span>
                         
                     </div>    
                     <div className='word'>
                         Nosotros
                     </div>    
                     <div className='word'>
-                        Contactanos
+                        Contáctanos
                     </div>
 
                 </div>
