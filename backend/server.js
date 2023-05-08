@@ -13,7 +13,10 @@ mongoose.connect("mongodb://0.0.0.0:27017/teacherstestv3", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log("Se conectó correctamente a la bd"))
-.catch(err => console.log("Hubo un error al conectarse a la bd"));
+.catch(err => {
+    console.log("Hubo un error al conectarse a la bd")
+    console.log(err)
+});
 
 const express = require("express");
 
