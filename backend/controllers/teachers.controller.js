@@ -14,6 +14,13 @@ const TeachersModel = require("../models/teachers");
 //     response.json(result);
 // }
 
+
+module.exports.test = async (request, response) => {    
+    response.json({
+        message: 'Hello from the server'
+    });
+}
+
 module.exports.listTeachers = async (request, response) => {
     var result = await TeachersModel.find();
     response.json(result);

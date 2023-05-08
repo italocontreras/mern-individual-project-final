@@ -3,6 +3,7 @@ const teachersController = require("../controllers/teachers.controller");
 const {validate_credentials} = require("../controllers/users.controller");
 
 module.exports = (app) => {
+    app.get("/",teachersController.test);
     app.get("/teachers/list",validate_credentials,teachersController.listTeachers);
     app.post("/teachers/new", teachersController.createTeacher);
     // app.put("/productos/actualizar/:productoId", teachersController.actualizarTeacher);
