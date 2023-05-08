@@ -5,6 +5,9 @@ import { useState } from "react";
 
 import { Link } from 'react-router-dom';
 
+import { useParams } from "react-router-dom";
+
+// import { useLocation } from 'react-router-dom';
 
 function Login() {
 
@@ -13,14 +16,19 @@ function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const {type} = useParams();
+
+    // history.push(type);
+
     async function login (ev) {
         ev.preventDefault()
         try {
           console.log("login jsx")
+          console.log("type",type)
           //   const resp = await axios.post(window.$api + '/auth/login', {
           //const resp = await axios.post('http://localhost:8000/api/auth/login', {  
           const resp = await axios.post(window.$api+'/users/login', {    
-            email, password
+            email,password,type
           })
           // si el login fué exitoso, guardamos la credencial en localStorage
           localStorage.setItem('token', resp.data.token)
@@ -107,10 +115,17 @@ function Login() {
 
                     <div className='link'>
                         
-                        <Link to="/register">Registrarse</Link>
-                        
-                        
+                        {/* <Link to="/register">Registrarse</Link>
+                        <Link to={{ pathname: '/register', state: 'type' }}>Registrarse</Link>
+                        <Link to={{ pathname: '/register', state: { type: 'student' } }}>Registrarse</Link> */}
+
+                        <Link to={{ pathname: '/register', search: '?type=student' }}>Registrarse</Link>
+
                     </div>
+
+                    {/* <div className='out-register-button'>
+                        <button type="submit" className='register-button'>Ingresar</button>
+                    </div>     */}
 
                 </div>
 

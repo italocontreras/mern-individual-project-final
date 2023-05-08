@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 // .catch(err => console.log("Hubo un error al conectarse a la bd"));
 
 // mongoose.connect("mongodb://localhost:27017/teacherstestv2", {
-mongoose.connect("mongodb://0.0.0.0:27017/teacherstestv3", {
+mongoose.connect("mongodb://0.0.0.0:27017/teacherstestv7", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then(() => console.log("Se conectó correctamente a la bd"))
@@ -42,6 +42,12 @@ teachersRoutes(app);
 
 const usersRoutes = require("./routes/users.routes");
 usersRoutes(app);
+
+const studentsDetailRoutes = require("./routes/studentsDetail.routes");
+studentsDetailRoutes(app);
+
+const teachersDetailRoutes = require("./routes/teachersDetail.routes");
+teachersDetailRoutes(app);
 
 const server = app.listen(8000, ()=>{
     console.log("Se levanto el servidor en el puerto 8000");

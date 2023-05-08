@@ -46,7 +46,7 @@
 }
 
 
-.register-body{
+.register-teacher-body{
     height: 90%;
     /* width: 900px; */
     /* background-image: url("./school.jpg"); */
@@ -58,14 +58,14 @@
 
 /* form */
 
-.out-register-input{
+.out-register-teacher-input{
     position: absolute;
 
-    top:17%;
+    top:11%;
     /* left: 37%;  */
     left: 15%;    
 
-    height: 450px;
+    height: 535px;
     /* width: 350px; */
     width: 900px;
 
@@ -99,14 +99,14 @@
 
 /* button */
 
-.register-button-out{
+.register-teacher-button-out{
     margin-top: 10px;
     display: flex;
     justify-content: center;
 }
 
 
-.register-button{
+.register-teacher-button{
     padding-left: 20px;
     padding-right: 20px;
 

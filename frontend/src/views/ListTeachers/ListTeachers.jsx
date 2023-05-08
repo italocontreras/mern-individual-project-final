@@ -56,7 +56,8 @@ function ListTeachers() {
         //       authorization: 'Bearer ' + token
         //     }
         //   })
-        axios.get(window.$api + '/teachers/'+buttonValueCourse+'/'+buttonValueModality+'/'+buttonValueResponse)
+        // axios.get(window.$api + '/teachers/'+buttonValueCourse+'/'+buttonValueModality+'/'+buttonValueResponse)
+        axios.get(window.$api + '/teachersDetail/'+buttonValueCourse+'/'+buttonValueModality+'/'+buttonValueResponse)
           .then(resp => {
             console.log("pasa por el then")
             console.log(resp)            
@@ -81,6 +82,20 @@ function ListTeachers() {
 
         }
     }  
+
+    async function loadData(ev) {
+        ev.preventDefault();
+    
+
+        try {
+            // alert('!')
+            navigate('/')
+
+        }
+        catch(err) {
+
+        }
+    }
 
     return (
         <div className='teachers-container'>
@@ -158,6 +173,9 @@ function ListTeachers() {
 
                 </div>        
 
+                {/* <div className='container-btn-success'>
+                        <input className="btn btn-success" type="button" value="Cargar datos" onClick ={loadData}/>
+                </div> */}
                 {/* <div className="teachers-list-data-ant"> 
                     
                     {
@@ -179,7 +197,7 @@ function ListTeachers() {
                             
                             <div className="row-left"> 
                                 
-                                <img src={teacher.imageUrl}/>
+                                <img src={teacher.imageurl}/>
                             </div>  
                             
                             <div className="row-right">

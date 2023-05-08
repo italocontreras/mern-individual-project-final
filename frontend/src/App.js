@@ -11,6 +11,9 @@ import Login from './views/Login/Login';
 // import TeachersList from './views/TeachersList/TeachersList';
 import ListTeachers from './views/ListTeachers/ListTeachers';
 
+import RegisterTeacher from './views/RegisterTeacher/RegisterTeacher';
+
+
 // import PiratesList from './views/PiratesList/PiratesList';
 // import CreatePirate from './views/CreatePirate/CreatePirate';
 // import UpdatePirate from './views/UpdatePirate/UpdatePirate';
@@ -23,9 +26,10 @@ function App() {
           <Routes>
             {/* <Route default path='/' element={<Main />}></Route> */}
             <Route path='/' element={<Main />}></Route>
-            <Route path='/login' element={<Login />}></Route>
+            {/* <Route path='/login' element={<Login />}></Route> */}
+            <Route path='/login/:type' element={<Login />}></Route>
             <Route path='/register' element={<Register />}></Route>
-            
+            <Route path='/register/teacher' element={<RegisterTeacher />}></Route>
             <Route path='/teachers' element={<ListTeachers />}></Route>
           </Routes>
         </header>

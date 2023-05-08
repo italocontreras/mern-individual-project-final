@@ -8,7 +8,7 @@ const key = 'misecretkey'
 module.exports.createUser = async (request, response) => {
     console.log("request",request)
     // var requestData = request.body;
-    var {name, lastName,email, password, pass_confirm} = request.body
+    var {name, lastName,email, password, pass_confirm,type} = request.body
 
     if (password != pass_confirm) {
         return response.json({error: 'Password are not equals'}, 401)
@@ -21,7 +21,8 @@ module.exports.createUser = async (request, response) => {
                 name: name,
                 lastName:lastName,
                 email: email,
-                password: encryptedPassword
+                password: encryptedPassword,
+                type:type
                 // pass_confirm:pass_confirm
             }
         );    
@@ -31,14 +32,43 @@ module.exports.createUser = async (request, response) => {
     }
 }
 
+module.exports.getUser = async (request, response) => {
+    console.log("request",request)
+    // var requestData = request.body;
+    var {name, lastName,email, password, pass_confirm,type} = request.body
+
+    if (password != pass_confirm) {
+        return response.json({error: 'Password are not equals'}, 401)
+    }
+
+    try {
+        var encryptedPassword = await bcrypt.hash(password, 10)
+        var newUser = await UsersModel.create(
+            {
+                name: name,
+                lastName:lastName,
+                email: email,
+                password: encryptedPassword,
+                type:type
+                // pass_confirm:pass_confirm
+            }
+        );    
+        response.json(newUser);
+    } catch(error) {
+        response.json(error);
+    }
+}
+
+
 module.exports.loginUser = async (request, response) => {
     console.log("login user")
     console.log("resquest.body",request.body)
     // var requestBody = request.body;
-    var {email, password} = request.body
+    var {email, password,type} = request.body
 
+    
     // var userFound = await UsersModel.findOne({ email: "ricardo.vasquez@gmail.com", password: "12345678" });
-    var user = await UsersModel.findOne({email: email});
+    var user = await UsersModel.findOne({email: email,type:type});
     console.log("user",user);
 
     if (user == null) {
