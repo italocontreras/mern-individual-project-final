@@ -19,15 +19,16 @@ function Register() {
         try {
           //const resp = await axios.post('http://localhost:8000/api/auth/register', {
           console.log("register")
-          const resp = await axios.post('http://localhost:8000/users/create', {  
+          const resp = await axios.post(window.$api+'/users/create', {  
             email, name,lastName,password,pass_confirm
           })
-          const resp2 = await axios.post('http://localhost:8000/users/login', {  
+          const resp2 = await axios.post(window.$api+'/users/login', {  
              email, password
           })
           localStorage.setItem('token', resp2.data.token)
           
-          navigate('/') 
+          navigate('/teachers')
+          alert('Welcome') 
         }
         catch(err){
           alert(err.response.data.error)

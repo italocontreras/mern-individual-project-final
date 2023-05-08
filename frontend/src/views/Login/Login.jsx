@@ -19,7 +19,7 @@ function Login() {
           console.log("login jsx")
           //   const resp = await axios.post(window.$api + '/auth/login', {
           //const resp = await axios.post('http://localhost:8000/api/auth/login', {  
-          const resp = await axios.post('http://localhost:8000/users/login', {    
+          const resp = await axios.post(window.$api+'/users/login', {    
             email, password
           })
           // si el login fué exitoso, guardamos la credencial en localStorage
@@ -27,6 +27,7 @@ function Login() {
           // y redirigimos a la pantalla principal
           console.log("login antes de navigate")
           navigate('/teachers')
+          alert('Welcome')
         }
         catch(err){
             console.log("catch")

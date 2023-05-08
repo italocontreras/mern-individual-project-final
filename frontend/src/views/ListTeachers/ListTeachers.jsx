@@ -3,6 +3,7 @@ import './ListTeachers.css'
 import { useState, useEffect } from 'react';
 import axios from 'axios'
 
+import { useNavigate } from "react-router-dom";
 // import { DropdownButton, Dropdown } from 'react-bootstrap';
 // import DropdownButton from 'react-bootstrap/DropdownButton';
 // import Dropdown from 'react-bootstrap/Dropdown';
@@ -16,7 +17,7 @@ function ListTeachers() {
 
     const [teachers, setTeachers] = useState([])    
 
-    // const navigate = useNavigate() 
+    const navigate = useNavigate() 
     // const [logueado,setLogueado] = useState(false)
 
     // const [course, setCourse] = useState('')
@@ -43,7 +44,7 @@ function ListTeachers() {
 
 
     useEffect(() => {
-          console.log("use effect distinto")
+        console.log("use effect distinto")
           // 1. Recuperamos el token
           //const token = localStorage.getItem('token')
           // 2. Llamamos a la API con la lista de jugadores
@@ -55,7 +56,7 @@ function ListTeachers() {
         //       authorization: 'Bearer ' + token
         //     }
         //   })
-        axios.get('http://localhost:8000/teachers/'+buttonValueCourse+'/'+buttonValueModality+'/'+buttonValueResponse)
+        axios.get(window.$api + '/teachers/'+buttonValueCourse+'/'+buttonValueModality+'/'+buttonValueResponse)
           .then(resp => {
             console.log("pasa por el then")
             console.log(resp)            
@@ -65,20 +66,45 @@ function ListTeachers() {
           .catch(error => {
             alert(error)
           })
-      }, [buttonValueCourse, buttonValueModality,buttonValueResponse]);    
+    }, [buttonValueCourse, buttonValueModality,buttonValueResponse]);    
+
+    async function goHome(ev) {
+        ev.preventDefault();
+    
+
+        try {
+            // alert('!')
+            navigate('/')
+
+        }
+        catch(err) {
+
+        }
+    }  
 
     return (
-        <div className='teachers-list'>
+        <div className='teachers-container'>
             
             <div className='teachers-nav-bar'>
-                <div className='teacher-word'>
-                    Mi Cuenta
-                </div>    
-                <div className='teacher-word'>
-                    Soporte
-                </div>    
+                <div className='teachers-left-nav-bar'>
+                    <div className='teachers-word'>
+                        Mi Cuenta
+                        
+                    </div>    
+                    <div className='teachers-word'>
+                        Soporte
+                    </div>    
+
+                </div>
+
+                <div className='teachers-right-nav-bar'>
+                    <div className='teachers-word'>
+                        <span onClick ={goHome}>Salir</span>
+                    </div>
+                </div>
 
             </div>
+
 
             <div className='teachers-body'>
                 
