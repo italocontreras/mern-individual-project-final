@@ -1,14 +1,6 @@
-// ejecutar npm install antes de correr el proyecto backend
-
 const mongoose = require("mongoose");
 
-// mongoose.connect("mongodb://localhost:27017/rappi", {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// }).then(() => console.log("Se conectó correctamente a la bd"))
-// .catch(err => console.log("Hubo un error al conectarse a la bd"));
 
-// mongoose.connect("mongodb://localhost:27017/teacherstestv2", {
 mongoose.connect("mongodb://0.0.0.0:27017/teacherstestv7", {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -37,8 +29,6 @@ const cors = require('cors')
 
 app.use(cors())
 
-const teachersRoutes = require("./routes/teachers.routes");
-teachersRoutes(app);
 
 const usersRoutes = require("./routes/users.routes");
 usersRoutes(app);
